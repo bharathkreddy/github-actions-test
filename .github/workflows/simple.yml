@@ -10,4 +10,10 @@ jobs:         # each worklow can have one or more jobs. Key for each job is name
         run: |
           node -v
           npm -v
+      - name: python Commands
+        run: |
+          import random
+          for x in range(1,10):
+            print(random.randint(0,9)) 
+        shell: python   # this informs that this command should be run on python.
 
