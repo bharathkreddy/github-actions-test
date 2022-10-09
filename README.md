@@ -4,10 +4,6 @@
 - yml or yaml : *Both mean the same thing*
 - Similar to json, yaml is **key value pairs**
 - Examples
-'''sh
-- yml or yaml : **Both mean the same thing**
-- Similar to json, yaml is **key value pairs**
-- Examples
 ```yaml
 name: bharath            // no quotations for Strings //
 age: 23                  // space after the colon //
