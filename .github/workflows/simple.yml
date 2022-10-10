@@ -16,13 +16,19 @@ jobs:         # each worklow can have one or more jobs. Key for each job is name
           for x in range(1,10):
             print(random.randint(0,9)) 
         shell: python   # this informs that this command should be run on python.
-  run-windows-commands:
+  run-windows-commands:    # runs in parallel with run-shell-command job
     runs-on: windows-latest
     steps:
       - name: Directory from Powershell   
-        run: Get-Location
+        run: Get-Location      # Runs Powershell as this is default shell
       - name: Pwd from shell running in windows
         run: pwd
-        shell: bash
-        
+        shell: bash         # This tells the runner to use bash shell
 
+  run-shell-two-command:
+    runs-on: ubuntu-latest
+    needs: ["run-shell-command"]
+    steps:
+      - name: get OS
+        run: cat /etc/os-release
+        
