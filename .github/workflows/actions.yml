@@ -1,5 +1,13 @@
 name: Actions Workflow
-on: [push]
+on:          # commented out to prevent github from running these actions and hitting usage limits.
+  #push:  
+  #pull_request:
+  #  types: [closed,opened,assigned,reopened]
+  #schedule:
+  #  - cron: "* * 1 1-6 *" #https://crontab.guru/
+  #  - cron: "0 22 * * MON-FRI"
+  repository_dispatch:
+    types: [lock]  # send post request to url with this event_type as body of post.
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
