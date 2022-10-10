@@ -1,0 +1,13 @@
+name: Actions Workflow
+on: [push]
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple Java Script Action
+        id: greet   # id is needed to reference any step
+        uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: 'BRK the UberCoder'
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}" # in order to reference a step we need its ID
