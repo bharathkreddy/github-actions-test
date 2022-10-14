@@ -1,5 +1,5 @@
 name: Shell Commands # name of the workflow
-on: [push]    # event on which workflow should trigger
+on: [pull_request]    # event on which workflow should trigger
 jobs:         # each worklow can have one or more jobs. Key for each job is name of the job.
   run-shell-command:         # each job is an object as well with bunch of keys
     runs-on: ubuntu-latest   # Each job runs on a seperate VM, the OS is defined here.
@@ -31,4 +31,4 @@ jobs:         # each worklow can have one or more jobs. Key for each job is name
     steps:
       - name: get OS
         run: cat /etc/os-release
-        
+

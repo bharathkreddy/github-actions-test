@@ -6,16 +6,16 @@ on:          # commented out to prevent github from running these actions and hi
   #schedule:
   #  - cron: "* * 1 1-6 *" #https://crontab.guru/
   #  - cron: "0 22 * * MON-FRI"
-  repository_dispatch:
-    types: [lock]  # send post request to url with this event_type as body of post.
+  repository_dispatch:    # uses a webhook, called repositary_dispatch, an external post request is needed to trigger this. 
+    types: [lock]  # send post request to url with this event_type as body of post. This request can have a payload too which can be read.
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: payload_read
-        run: |  
-          echo "${{ github.event.client_payload.env }}"
-          echo ${{ github.event.client_payload.var2 }}
+      - name: payload_read       # RUN echo can be with or without quotes 
+        run: |     
+          echo ${{ github.event.client_payload.env }}
+          echo ${{ github.event.client_payload.var2 }}    
       - name: List files
         run: |
           pwd
