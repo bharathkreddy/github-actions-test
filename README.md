@@ -60,12 +60,19 @@
       
      ```
 3. **jobs**: A workflow can have one or more jobs. Each job runs on a seperate VMs and run parallelly but can also run in a serial. 
+
   **name-of-the-job**:
+
     **runs-on**:Operating system of the runner. 
+
     **needs**:[array of "name-of-the-job" in quotes, of job on which this jobs depends, or job IDs]
+
     **steps**: this is an array of objects, each step can perfrom an action or run a command.
+
       **- name**: name of the step
+
        **run**: the command to run, can be single or multi lined or mention a specific shell to run the command.
+
     ```yaml
     run : echo "hello world"
     ~~~~~~~~~~~~~~~~~~~~~~~~
