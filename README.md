@@ -73,19 +73,19 @@
 
        **run**: the command to run, can be single or multi lined or mention a specific shell to run the command.
 
-    ```yaml
-    run : echo "hello world"
-    ~~~~~~~~~~~~~~~~~~~~~~~~
-    run: |     # pipe allows multi line 
-      echo pwd
-      npm -v
-    ~~~~~~~~~~~~~~~~~~~~~~~~~
-    run: |
-      import random
-      for x in range(1,10):
-        print(random.randint(0,9)) 
-    shell: python 
-    ```
+```yaml
+run : echo "hello world"
+~~~~~~~~~~~~~~~~~~~~~~~~
+run: |     # pipe allows multi line 
+    echo pwd
+    npm -v
+~~~~~~~~~~~~~~~~~~~~~~~~~
+run: |
+    import random
+    for x in range(1,10):
+    print(random.randint(0,9)) 
+shell: python 
+```
 
 
 
