@@ -100,7 +100,9 @@ shell: python
       **- name**: 
 
        **uses**: instead of run to execute a command, uses refers to an action. Actions can be written and referenced as a path or can be used directly if published in some other git hub repo. If this is other repo then format is {username}/{repo name}@{version} or instead of version we can also metion a specific commit id.
+
         **- with**:
+
           **{input}:** this is key value pair of inputs for any action specified in the uses part.
 
 ```yaml
