@@ -87,6 +87,37 @@ run: |
 shell: python 
 ```
 
+**jobs**:
+
+  **name-of-the-job**:
+
+    **runs-on**:
+
+    **needs**:
+
+    **steps**: 
+
+      **- name**: 
+
+       **uses**: instead of run to execute a command, uses refers to an action. Actions can be written and referenced as a path or can be used directly if published in some other git hub repo. If this is other repo then format is {username}/{repo name}@{version} or instead of version we can also metion a specific commit id.
+        **- with**:
+          **{input}:** this is key value pair of inputs for any action specified in the uses part.
+
+```yaml
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple Java Script Action
+        id: greet   # optional ID for each step, but needed if a step has to be referenced somewhere.
+        uses: actions/hello-world-javascript-action@v1.1   #this is a published action on a github repo
+        with:
+          who-to-greet: 'BRK the UberCoder'   #on github rep called actions/hello-world-javascript-action, the documentation gives inputs needed for this action.
+    - name: Log Greeting Time   #actions can also generate output, here we have created a new step to capture this output.
+        run: echo "${{ steps.greet.outputs.time }}" # in order to reference a step we need its ID, see above.   
+```
+
+
 
 
 ## 3. First Workflow✨
