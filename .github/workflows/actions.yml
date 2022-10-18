@@ -12,9 +12,9 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: payload_read       # RUN echo can be with or without quotes 
+      - name: payload_read       # Reads the variables passed in client_payload in the body of post request for repositary_dispatch api. 
         run: |     
-          echo ${{ github.event.client_payload.env }}
+          echo ${{ github.event.client_payload.env }}  
           echo ${{ github.event.client_payload.name }}   
           echo ${{ github.event.client_payload.purpose }}    
       - name: List files
