@@ -15,7 +15,8 @@ jobs:
       - name: payload_read       # RUN echo can be with or without quotes 
         run: |     
           echo ${{ github.event.client_payload.env }}
-          echo ${{ github.event.client_payload.var2 }}    
+          echo ${{ github.event.client_payload.name }}   
+          echo ${{ github.event.client_payload.purpose }}    
       - name: List files
         run: |
           pwd
