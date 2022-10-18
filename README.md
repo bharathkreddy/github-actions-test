@@ -60,10 +60,10 @@
       repository_dispatch:    # uses a webhook, called repositary_dispatch, an external post request is needed to trigger this. 
         types: [lock]  # send post request to url with this event_type as body of post. This request can have a payload too which can be read.
      ```
-     ![postman1](/Users/bharathreddy/Desktop/github_token.png "github token")
-     ![postman1](/Users/bharathreddy/Desktop/postman_token.png "postman token")
-     ![postman1](/Users/bharathreddy/Desktop/github_header.png "postman header")
-     ![postman1](/Users/bharathreddy/Desktop/github_body.png "postman body")
+     ![postman1](https://github.com/bharathkreddy/github-actions-test/blob/main/images/github_token.png "github token")
+     ![postman1](https://github.com/bharathkreddy/github-actions-test/blob/main/images/postman_token.png "postman token")
+     ![postman1](https://github.com/bharathkreddy/github-actions-test/blob/main/images/github_header.png "postman header")
+     ![postman1](https://github.com/bharathkreddy/github-actions-test/blob/main/images/github_body.png "postman body")
 
 
 3. **jobs**: A workflow can have one or more jobs. Each job runs on a seperate VMs and run parallelly but can also run in a serial. 
